@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.emojipicker.EmojiPicker" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Emoji Picker</name>
+    <description>Emoji Picker</description>
+    <icon>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABp1BMVEUAAABV//9mzP9LtP9Ms/9Jtv9NsvdJsfpLtPpJsfdJsfhJsvhJsvdKsvdJsPhKsPhJsfdJsPhJsfdIsfhJsfdIsPdJsfhJsfhJsPhJsPhIsfhIsPdJsPdKsPdKsfdNsvdOsvdPs/dQs/dRtPdStPdTtPdUtfdWtvdXtvdauPdcuPdeufdeufhguvhiu/hju/hkvPhmvfhnvfhpvvhrv/huwPhvwfhxwfhywvhzwvh4xfl5xfl6xfl8xvl9xvl9x/mByPmCyfmFyvmGyvmJzPmKzPmLzfmNzvqPzvqQz/qT0PqU0PqU0fqX0vqY0vqa0/qe1fqg1vqj1/uk1/un2fup2vut2/uv3Puw3Puw3fuz3vu13/u23/u34Pu44Pu64fu64fy84vy94vy+4/y/4/zD5fzE5fzG5vzH5vzI5/zK6PzL6PzR6/zT7P3U7P3V7f3W7f3Y7v3Z7v3c8P3e8f3f8f3g8f3i8v3l8/3l9P3n9P3r9v7t9/7u9/7v+P7w+P7x+f7y+f70+v71+v74/P75/P76/f77/f78/f78/v79/v7+/v7////6dMsRAAAAG3RSTlMAAwURGxwhMTNic3SEh4iVp7XBzejt7vH5/f6PsMNWAAABsklEQVR4AWIYfGAUjIJRMAqYuYREJKWJAqLCPGwY+jnFpEkBEryMqPr5pEkFgkwo9kuTDviR/S9GhgFSHAgDuKXJAQIIA4TIMkAcEY4i0mQBVrgBkuQZwA43QJo8wIFhQEhEOIBQOutHJozDOP5Crp4e1RhkJ0tKGJFd6oNEdtmJyEIzpaZl5nrRZgaHM/2Pf5/vwXXfyagXgG93bwSAlEolowLMm9w83gibhXH2gKKVdD67gTnWjwCk+VVjMQS4suSnnjMLRVFc9sAHvAX2A9fySaXNBMbEZVUWscaHIMRuqwBgD8hDEbnsRmfjUKJkAQZGCTlO/xWBwIADQLIZBlY441MvfoF1xlFS/4fy+bzXKh4dgNJE7L3eh3tmtuWa+AMcMIY3dgUvZQpGEYmMw2kD7HC+R29UqyoXLaBd0QZxzgXgikLLDSqJTKU5HOcS0MsbA9jPqtwCRvXm2eorBbNIJBw3KJ9O4Yl+AAXdnyaLt7PWN3jRWLvzmAVp94zO5+n41/onfo/UpExxZqI0O7NQr0DhIq9Io7hQpbRYp7hiobRqo6ByFcNWuY6CUTAKRgEAo8X0lBD3V30AAAAASUVORK5CYII=
+    </icon>
+    <properties>
+        <propertyGroup caption="Emoji Display and Style">
+
+            <property key="openKey" type="attribute" required="false">
+                <caption>open</caption>
+                <description>Controls whether the picker is open or not. Default is true</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="emojiStyleKey" type="attribute" required="false">
+                <caption>emoji Style</caption>
+                <description>Controls the emoji style. Possible values are google, apple, facebook, twitter and native. Default is apple</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="defaultSkinToneKey" type="attribute" required="false">
+                <caption>defaultSkinTone</caption>
+                <description>Controls the default skin tone.Possible skin tones are NEUTRAL,LIGHT,MEDIUM LIGHT,MEDIUM,MEDIUM DARK,DARK . Default is NEUTRAL</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="lazyLoadEmojisKey" type="attribute" required="false">
+                <caption>lazyLoad Emojis</caption>
+                <description>Controls whether the emojis are loaded lazily or not. Default is false</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="hiddenEmojisKey" type="attribute" required="false">
+                <caption>hiddenEmojis</caption>
+                <description>Controls the emojis that are hidden from the picker.Pass an array of emoji unicode names to hide.</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                  
+                </attributeTypes>
+            </property>
+             <property key="emojiVersionKey" type="attribute" required="false">
+                <caption>emoji Version</caption>
+                <description>Allows displaying emojis up to a certain version for compatibility.Common values are "0.6","1.0","2.0","3.0","4.0","5.0"</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="autoFocusSearchKey" type="attribute" required="false">
+                <caption>auto Focus Search</caption>
+                <description>Controls the auto focus of the search input. Default is true</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="ThemeKey" type="attribute" required="false">
+                <caption>Theme</caption>
+                <description>Controls the theme of the picker. Possible values are light, dark and auto. Default is light</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="classNameKey" type="attribute" required="false">
+                <caption>class Name</caption>
+                <description>Adds a class name to the root element of the picker.</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="widthKey" type="attribute" required="false">
+                <caption>width</caption>
+                <description>Controls the width of the picker. You can provide a number that will be treated as pixel size, or your any accepted css width as string. Default is 350</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                    <attributeType name="Integer"/>                      
+                </attributeTypes>
+            </property>
+            <property key="heightKey" type="attribute" required="false">
+                <caption>height</caption>
+                <description>Controls the height of the picker. You can provide a number that will be treated as pixel size, or your any accepted css height as string. Default is 450</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                    <attributeType name="Integer"/>                      
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Skin Tone Settings">
+            <property key="skinTonesDisabledKey" type="attribute" required="false">
+                <caption>skinTones Disabled</caption>
+                <description>Controls whether the skin tones are disabled or not. Default is false</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="skinTonePickerLocationKey" type="attribute" required="false">
+                <caption>skinTone Picker Location</caption>
+                <description>Controls the location of the skin tone picker. Possible values are SEARCH and PREVIEW. Default is "SEARCH"</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Suggested Emojis and Reactions Settings">
+            <property key="suggestedEmojisModeKey" type="attribute" required="false">
+                <caption>suggested Emojis Mode</caption>
+                <description>Controls the suggested emojis mode. Possible values are frequent and recent. Default is "frequent"</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="reactionsDefaultOpenKey" type="attribute" required="false">
+                <caption>reactionsDefaultOpen</caption>
+                <description>Controls whether the reactions picker is on the initial mount instead of the main picker component. Default is false</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="allowExpandReactionsKey" type="attribute" required="false">
+                <caption>allowExpandReactions</caption>
+                <description>Controls whether the reactions picker can be expanded to the main picker. Default is true</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+
+        </propertyGroup>
+
+        <propertyGroup caption="Search Settings">
+            <property key="searchPlaceholderKey" type="attribute" required="false">
+                <caption>searchPlaceholder</caption>
+                <description>Controls the placeholder of the search input. Default is "Search"</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="searchDisabledKey" type="attribute" required="false">
+                <caption>search Disabled</caption>
+                <description>Controls whether the search is disabled or not. When disabled, the skin tone picker will be shown in the preview component. Default is false</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+
+        </propertyGroup>
+            
+        <propertyGroup caption="Event Handlers">
+            <property key="onEmojiClick" type="action" required="false">
+					<caption>onEmojiClick</caption>
+					<description>On Emoji Click</description>
+			</property>
+            <property key="onEmojiClickedDataKey" type="attribute" required="false">
+                <caption>onEmojiClickedData</caption>
+                <description>On Emoji Clicked Data</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                  
+                </attributeTypes>
+            </property>
+             <property key="onSkinToneChange" type="action" required="false">
+					<caption>onSkinToneChange</caption>
+					<description>On SkinTone Change</description>
+			</property>
+            <property key="onSkinToneChangedDataKey" type="attribute" required="false">
+                <caption>onSkinToneChangedData</caption>
+                <description>on SkinTone Changed Data</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                  
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Preview Settings">
+            <property key="previewConfigKey" type="attribute" required="false">
+                <caption>Preview Config</caption>
+                <description>Controls the preview of the emoji. Default is false</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+            <property key="defaultEmojiKey" type="attribute" required="false">
+                <caption>defaultEmoji</caption>
+                <description>default Emoji. Default is "1f60a"  </description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="defaultCaptionKey" type="attribute" required="false">
+                <caption>defaultCaption</caption>
+                <description>default Caption. Default is "What's your mood?"</description>
+                <attributeTypes>
+                    <attributeType name="String"/>                    
+                </attributeTypes>
+            </property>
+            <property key="showPreviewKey" type="attribute" required="false">
+                <caption>showPreview</caption>
+                <description>showPreview. Default is true</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

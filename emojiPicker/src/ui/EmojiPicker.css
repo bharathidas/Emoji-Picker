@@ -1,0 +1,24 @@
+﻿.widget-emojipicker-clickable {
+    cursor: pointer;
+}
+
+.widget-emojipicker {
+    display: inline-block;
+}
+
+.widget-emojipicker.badge:empty {
+    display: initial;
+    /* Fix padding to stay round */
+    padding: 3px 10px;
+}
+
+.widget-emojipicker.label:empty {
+    display: initial;
+    /* Fix padding to stay square */
+    padding: .2em .8em .3em;
+}
+
+.widget-emojipicker.badge {
+    min-width: 18px;
+    min-height: 18px;
+}
